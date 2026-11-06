@@ -39,6 +39,10 @@ public class HibernateDemoApplication {
     };
   }
 
+  /**
+   * Creates multiple demo student data.
+   * @param studentDao
+   */
   private void createStudent(StudentDao studentDao) {
     System.out.println("Creating student information...");
     Student student = new Student("Light",
@@ -75,6 +79,10 @@ public class HibernateDemoApplication {
     System.out.println("Saved! Generated id: " + student5.getId());
   }
 
+  /**
+   * Retrieves student data from id
+   * @param studentDao
+   */
   private void readStudent(StudentDao studentDao) {
     System.out.println("Retrieving student id 2...");
     Student student = studentDao.findById(2);
@@ -82,6 +90,10 @@ public class HibernateDemoApplication {
     System.out.println("Found the student " + student);
   }
 
+  /**
+   * Fetches all student data.
+   * @param studentDao
+   */
   private void queryStudents(StudentDao studentDao) {
     List<Student> students = studentDao.findAll();
 
@@ -90,6 +102,10 @@ public class HibernateDemoApplication {
     }
   }
 
+  /**
+   * Fetches student data based on last name
+   * @param studentDao
+   */
   private void queryStudentLastName(StudentDao studentDao) {
     List<Student> students = studentDao.findByLastName("Miranda");
 
@@ -98,6 +114,11 @@ public class HibernateDemoApplication {
     }
   }
 
+  /**
+   * Updates student data.
+   * Needs id and field to change.
+   * @param studentDao
+   */
   private void updateStudent(StudentDao studentDao) {
     int id = 1;
     System.out.println("Student ID: " + id);
@@ -111,6 +132,10 @@ public class HibernateDemoApplication {
     System.out.println("Updated student information: " + student);
   }
 
+  /**
+   * Removes student from database based on ID.
+   * @param studentDao
+   */
   private void deleteStudent(StudentDao studentDao) {
     int id = 4;
     System.out.println("Delete ID: " + id);
@@ -118,6 +143,10 @@ public class HibernateDemoApplication {
     studentDao.delete(id);
   }
 
+  /**
+   * Deletes all students and prints how many were deleted.
+   * @param studentDao
+   */
   private void deleteAllStudent(StudentDao studentDao) {
     System.out.println("Deleting all student information...");
     int rowsDeleted = studentDao.deleteAll();
