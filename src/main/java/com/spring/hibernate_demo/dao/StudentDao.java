@@ -1,21 +1,21 @@
 package com.spring.hibernate_demo.dao;
 
+import com.spring.hibernate_demo.entity.Student;
 import java.util.List;
 
-import com.spring.hibernate_demo.entity.Student;
-
+/** Data access operations for {@link Student} entities. */
 public interface StudentDao {
-    void save(Student theStudent);
+  void save(Student theStudent);
 
-    Student findById(Integer id);
+  Student findById(Integer id);
 
-    List<Student> findAll();
+  List<Student> findAll();
 
-    List<Student> findByLastName(String lastname);
+  List<Student> findByLastName(String lastname);
 
-    void update(Student theStudent);
+  void update(Student theStudent);
 
-    void delete(Integer id);
+  void delete(Integer id);
 
-    int deleteAll();
+  int deleteAll();
 }
