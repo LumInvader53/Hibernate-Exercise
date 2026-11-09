@@ -37,10 +37,9 @@ public class AppDaoImplement implements AppDao {
     public void deleteInstructorById(int theId) {
         Instructor in = em.find(Instructor.class, theId);
 
-        deleteInstructorDetail(theId);
-
         List<Course> courses = in.getCourses();
 
+        System.out.println("TESTINGGa: " + courses);
         for(Course c: courses){
             c.setInstructor(null);
         }
