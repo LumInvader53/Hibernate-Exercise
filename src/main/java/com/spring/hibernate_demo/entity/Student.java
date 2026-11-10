@@ -1,8 +1,5 @@
 package com.spring.hibernate_demo.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,6 +9,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Represents a student entity persisted in the database.
@@ -39,8 +38,13 @@ public class Student {
       CascadeType.PERSIST, CascadeType.REFRESH })
   private List<Course> courses;
 
+  /**
+   * Helper for adding a course to student and assigning student to course.
+   *
+   * @param course Course to be added to list of courses.
+   */
   public void addCourse(Course course){
-    if(courses == null){
+    if (courses == null){
       courses = new ArrayList<>();
     }
     courses.add(course);
