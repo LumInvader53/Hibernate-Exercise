@@ -3,7 +3,7 @@ package com.spring.hibernate_demo.dao;
 import com.spring.hibernate_demo.entity.Student;
 import java.util.List;
 
-/** Data access operations for {@link Student} entities. */
+/** Data access operations for Student entities. */
 public interface StudentDao {
   void save(Student theStudent);
 
