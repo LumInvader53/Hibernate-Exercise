@@ -35,36 +35,36 @@ public class HibernateDemoApplication {
   CommandLineRunner commandLineRunner(StudentDao studentDao, AppDao app) {
     return runner -> {
       System.out.println("Student Runner");
-      // createStudent(studentDao);
-      // readStudent(studentDao);
-      // queryStudents(studentDao);
-      // queryStudentLastName(studentDao);
-      // updateStudent(studentDao);
-      // deleteStudent(studentDao);
-      // deleteAllStudent(studentDao);
+      createStudent(studentDao);
+      readStudent(studentDao);
+      queryStudents(studentDao);
+      queryStudentLastName(studentDao);
+      updateStudent(studentDao);
+      deleteStudent(studentDao);
+      deleteAllStudent(studentDao);
 
       System.out.println("App Runner");
 
-      // createInstructor(app);
-      // findInstructor(app);
-      // deleteInstructor(app);
-      // findInstructorDetail(app);
-      // deleteInstructorDetail(app);
-      // createInstructorWithCourses(app);
-      // findInstructorWithCourses(app);
-      // findCoursesForInstructor(app);
-      // findInstructorWithCoursesJoinFetch(app);
-      // updateInstructor(app);
-      // deleteInstructorOnly(app);
-      // deleteCourseAndReviews(app);
-      // createCourseAndReviews(app);
-      // retrieveCourseAndReviews(app);
-      // createCourseAndStudents(app);
-      // findCourseAndStudents(app);
-      // findStudentsAndCourses(app);
-      // addMoreCoursesForStudent(app);
-      // deleteCourseById(app);
-      // deleteStudent(app);
+      createInstructor(app);
+      findInstructor(app);
+      deleteInstructor(app);
+      findInstructorDetail(app);
+      deleteInstructorDetail(app);
+      createInstructorWithCourses(app);
+      findInstructorWithCourses(app);
+      findCoursesForInstructor(app);
+      findInstructorWithCoursesJoinFetch(app);
+      updateInstructor(app);
+      deleteInstructorOnly(app);
+      deleteCourseAndReviews(app);
+      createCourseAndReviews(app);
+      retrieveCourseAndReviews(app);
+      createCourseAndStudents(app);
+      findCourseAndStudents(app);
+      findStudentsAndCourses(app);
+      addMoreCoursesForStudent(app);
+      deleteCourseById(app);
+      deleteStudent(app);
     };
   }
 
@@ -385,6 +385,18 @@ public class HibernateDemoApplication {
   }
 
   /**
+   * Removes student from database based on ID.
+   *
+   * @param studentDao DAO used to delete student entity
+   */
+  private void deleteStudent(StudentDao studentDao) {
+    int id = 4;
+    System.out.println("Delete ID: " + id);
+
+    studentDao.delete(id);
+  }
+
+  /**
    * Creates multiple demo student data.
    *
    * @param studentDao DAO used to add student entity
@@ -451,7 +463,7 @@ public class HibernateDemoApplication {
   }
 
   /**
-   * Fetches student data based on last name
+   * Fetches student data based on last name.
    *
    * @param studentDao DAO used to retrieve student entity
    */
@@ -480,18 +492,6 @@ public class HibernateDemoApplication {
     studentDao.update(student);
 
     System.out.println("Updated student information: " + student);
-  }
-
-  /**
-   * Removes student from database based on ID.
-   *
-   * @param studentDao DAO used to delete student entity
-   */
-  private void deleteStudent(StudentDao studentDao) {
-    int id = 4;
-    System.out.println("Delete ID: " + id);
-
-    studentDao.delete(id);
   }
 
   /**
