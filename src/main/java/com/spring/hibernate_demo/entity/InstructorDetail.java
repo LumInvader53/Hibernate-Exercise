@@ -70,7 +70,8 @@ public class InstructorDetail {
 
   @Override
   public String toString() {
-    return "InstructorDetail [id=" + id + ", subject=" + subject + ", hobby=" + hobby + "]";
+    return "InstructorDetail [id=" + id + ", subject="
+        + subject + ", hobby=" + hobby + "]";
   }
 
   public Instructor getInstructor() {

@@ -20,7 +20,8 @@ public class StudentDaoImplement implements StudentDao {
   }
 
   /**
-   * Schedules SQL statement to be executed on the database when transaction commits.
+   * Schedules SQL statement to be executed on
+   * the database when transaction commits.
    */
   @Override
   @Transactional
@@ -41,7 +42,8 @@ public class StudentDaoImplement implements StudentDao {
    */
   @Override
   public List<Student> findAll() {
-    TypedQuery<Student> query = em.createQuery("FROM Student order by lastName", Student.class);
+    TypedQuery<Student> query = em.createQuery(
+        "FROM Student order by lastName", Student.class);
 
     return query.getResultList();
   }
@@ -51,7 +53,8 @@ public class StudentDaoImplement implements StudentDao {
    */
   @Override
   public List<Student> findByLastName(String lastname) {
-    TypedQuery<Student> query = em.createQuery("FROM Student WHERE lastName=:data", Student.class);
+    TypedQuery<Student> query = em.createQuery(
+        "FROM Student WHERE lastName=:data", Student.class);
 
     query.setParameter("data", lastname);
     return query.getResultList();

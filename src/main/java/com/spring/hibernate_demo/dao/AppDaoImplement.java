@@ -84,7 +84,8 @@ public class AppDaoImplement implements AppDao {
   }
 
   /**
-   * Deletes an instructor and clears the instructor reference from each associated course.
+   * Deletes an instructor and clears the instructor reference
+   * from each associated course.
    *
    * @param theId the instructor ID to delete
    */
@@ -114,7 +115,8 @@ public class AppDaoImplement implements AppDao {
   }
 
   /**
-   * Deletes an instructor detail and removes the association from its instructor.
+   * Deletes an instructor detail and removes the
+   * association from its instructor.
    *
    * @param theId the instructor detail ID to delete
    */
@@ -145,7 +147,8 @@ public class AppDaoImplement implements AppDao {
   }
 
   /**
-   * Finds an instructor together with all of their courses using a JOIN FETCH query.
+   * Finds an instructor together with all of their courses
+   * using a JOIN FETCH query.
    *
    * @param theId the instructor ID
    * @return the instructor with eagerly loaded courses
@@ -164,7 +167,8 @@ public class AppDaoImplement implements AppDao {
   }
 
   /**
-   * Deletes a course by ID and removes its association with an instructor if present.
+   * Deletes a course by ID and removes its association
+   * with an instructor if present.
    *
    * @param theId the course ID to delete
    */
